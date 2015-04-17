@@ -2,10 +2,10 @@
 
 MAKE = {MAKE}
 
-BINDIR = {PACKAGEPREFIX}{BINDIR}
-DATADIR = {PACKAGEPREFIX}{DATADIR}
-DOCDIR = {PACKAGEPREFIX}{DOCDIR}
-MANDIR = {PACKAGEPREFIX}{MANDIR}
+BINDIR = ${DESTDIR}/{PACKAGEPREFIX}{BINDIR}
+DATADIR = ${DESTDIR}/{PACKAGEPREFIX}{DATADIR}
+DOCDIR = ${DESTDIR}/{PACKAGEPREFIX}{DOCDIR}
+MANDIR = ${DESTDIR}/{PACKAGEPREFIX}{MANDIR}
 
 UADECORENAME={UADECORENAME}
 UADE123NAME={UADE123NAME}
@@ -22,7 +22,7 @@ libuade:
 	$(MAKE) -C src/frontends/libuade
 
 libuadeinstall:	
-	$(MAKE) -C src/frontends/libuade install
+	$(MAKE) -C src/frontends/libuade install DESTDIR="${DESTDIR}"
 
 uadecore:	
 	$(MAKE) -C src
@@ -38,19 +38,19 @@ uadecoreinstall:
 	cp doc/uade123.1 "$(MANDIR)"/
 	chmod og+r "$(MANDIR)"/uade123.1
 
-	$(MAKE) -C src install
+	$(MAKE) -C src install DESTDIR="${DESTDIR}"
 
 uade123:	staticlibuade
 	$(MAKE) -C src/frontends/uade123
 
 uade123install:	uade123
-	$(MAKE) -C src/frontends/uade123 install
+	$(MAKE) -C src/frontends/uade123 install DESTDIR="${DESTDIR}"
 
 uadefs:	staticlibuade
 	$(MAKE) -C src/frontends/uadefs
 
 uadefsinstall:	uadefs
-	$(MAKE) -C src/frontends/uadefs install
+	$(MAKE) -C src/frontends/uadefs install DESTDIR="${DESTDIR}"
 
 uadesimple:	staticlibuade
 	$(MAKE) -C src/frontends/uadesimple

@@ -516,8 +516,10 @@ find_lib() {
 	if test -z "$d" ; then continue ; fi
 	if test -e "$d/lib/$libname" ; then
 	    echo "$d"
-	    return
+	elif test -e "$d/lib64/$libname" ; then
+	    echo "$d"
 	fi
+        return
     done
 }
 
