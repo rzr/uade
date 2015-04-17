@@ -1,5 +1,5 @@
 Source: uade
-Section: unknown
+Section: utils
 Priority: optional
 Maintainer: Philippe Coval <rzr@gna.org>
 Build-Depends: debhelper (>= 9), autotools-dev
@@ -13,3 +13,14 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: <insert up to 60 chars description>
  <insert long description, indented with spaces>
+
+Package: uade-snapshot
+Architecture: all
+Section: utils
+Depends: uade (= ${source:Version}), ${misc:Depends}
+Suggests: rzr
+Priority: extra
+Description: unreleased snapshot version
+ TODO: Remove on issue and upgrade uade
+ http://rzr.online.fr/q/snapshot#uade Feedback welcome
+
