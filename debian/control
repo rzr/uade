@@ -1,0 +1,15 @@
+Source: uade
+Section: unknown
+Priority: optional
+Maintainer: Philippe Coval <rzr@gna.org>
+Build-Depends: debhelper (>= 9), autotools-dev
+Standards-Version: 3.9.5
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://anonscm.debian.org/collab-maint/uade.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/uade.git;a=summary
+
+Package: uade
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
