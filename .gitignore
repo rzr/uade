@@ -9,3 +9,7 @@ src/frontends/*/Makefile
 *#
 song.conf
 uade.conf
+*~
+debian/*.log
+debian/*.substvars
+debian/files
